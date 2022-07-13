@@ -1,0 +1,24 @@
+name: test3
+on:
+   workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: trial
+    env:
+      SUPER_SECRET: ${{ secrets.MY_PAT }}
+      AA: 'Amol A'
+    steps:
+      - name: Dump env context
+        run: echo '${{ toJSON(env) }}'    
+      - name: Dump job context
+        run: echo '${{ toJSON(job) }}'
+      - name: Dump secrets context
+        run: echo '${{ toJSON(secrets) }}'        
+      - name: test
+        run: |
+            echo "Testing of Git action."
+            echo "secret is ${{env.SUPER_SECRET}}".
+            echo "AA is ${{env.AA}}".
+            echo "Job status is ${{ job.status}}."  
