@@ -14,6 +14,8 @@ jobs:
         run: echo '${{ toJSON(env) }}'    
       - name: Dump job context
         run: echo '${{ toJSON(job) }}'
+      - name: Dump secrets context
+        run: echo '${{ toJSON(secrets) }}'        
       - name: test
         run: |
             echo "Testing of Git action."
