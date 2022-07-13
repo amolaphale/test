@@ -3,10 +3,8 @@ on:
    workflow_dispatch
 jobs:
   build:
-    name:build
     runs-on:[ubuntu-latest]
     steps:
       -run:|
             echo "Testing of Git action."
             echo "Job status is ${{ job.status}}."
-Footer
