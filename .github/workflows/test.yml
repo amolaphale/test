@@ -5,7 +5,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment:
-      name:trial
+      name: trial
     env:
       SUPER_SECRET: ${{ secrets.MY_PAT }}
       AA: 'Amol A'
