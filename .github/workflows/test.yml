@@ -10,6 +10,10 @@ jobs:
       SUPER_SECRET: ${{ secrets.MY_PAT }}
       AA: 'Amol A'
     steps:
+      - name: Dump env context
+        run: echo '${{ toJSON(env) }}'    
+      - name: Dump job context
+        run: echo '${{ toJSON(job) }}'
       - name: test
         run: |
             echo "Testing of Git action."
