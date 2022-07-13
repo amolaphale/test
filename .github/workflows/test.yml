@@ -8,9 +8,11 @@ jobs:
       name:trial
     env:
       SUPER_SECRET: ${{ secrets.MY_PAT }}
+      AA: 'Amol A'
     steps:
       - name: test
         run: |
             echo "Testing of Git action."
             echo "secret is ${{env.SUPER_SECRET}}".
+            echo "AA is ${{env.AA}}".
             echo "Job status is ${{ job.status}}."          
