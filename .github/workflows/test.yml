@@ -6,9 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name:trial
+    env:
+      SUPER_SECRET: ${{ secrets.MY_PAT }}
     steps:
       - name: test
         run: |
             echo "Testing of Git action."
-            echo "secret is ${{secrets.MY_PAT}}".
+            echo "secret is ${{env.SUPER_SECRET}}".
             echo "Job status is ${{ job.status}}."          
